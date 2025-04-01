@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VEEDOO - Worker</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="script.js" defer></script>
+    <link rel="manifest" href="manifest.json">
+</head>
+<body>
+
+    <!-- Startseite -->
+    <div class="page" id="startseite">
+        <div class="header">VEEDOO - WORKER</div>
+        <button class="einsatz-button1" onclick="showPage('einsatzsituation')">
+            EINSATZ ERWACHSEN <span class="icon">👮‍♂️</span>
+        </button> <br>
+        <button class="einsatz-button2" onclick="showPage('einsatzsituation')">
+            EINSATZ KIND <span class="icon">👶</span>
+        </button>
+    </div>
+
+    <!-- Einsatzsituation -->
+    <div class="page" id="einsatzsituation" style="display: none;">
+        <div class="header">EINSATZSITUATION</div>
+        <div class="input-container">
+            <input type="text" id="einsatzort" placeholder="Einsatzort">
+            <input type="text" id="einsatzzeit" placeholder="Einsatzzeit">
+            <input type="text" id="wetter" placeholder="Wetter">
+            <input type="text" id="na" placeholder="NA">
+            <input type="text" id="na_ma" placeholder="NA-MA">
+        </div>
+        <button class="weiter-button" onclick="showPage('team')">WEITER</button>
+    </div>
+
+    <!-- Team -->
+    <div class="page" id="team" style="display: none;">
+        <div class="header">TEAM</div>
+        <div class="input-container">
+            <input type="text" id="mve" placeholder="MVE">
+            <input type="text" id="ma" placeholder="MA">
+            <input type="text" id="na_team" placeholder="NA">
+            <input type="text" id="na_ma_team" placeholder="NA-MA">
+        </div>
+        <div class="button-container">
+            <button class="weiter-button" onclick="showPage('patient')">WEITER</button>
+            <button class="zurueck-button" onclick="goBack()">ZURÜCK</button>
+        </div>
+    </div>
+    
+    <!-- Patient -->
+    <div class="page" id="patient" style="display: none;">
+        <div class="header">PATIENT</div>
+        <div class="input-container">
+            <input type="text" id="geschlecht" placeholder="Geschlecht">
+            <input type="number" id="alter" placeholder="Alter">
+            <input type="number" id="gewicht" placeholder="Gewicht (kg)">
+            <input type="number" id="groesse" placeholder="Größe (cm)">
+        </div>
+        <div class="button-container">
+            <button class="zurueck-button" onclick="goBack()">ZURÜCK</button>
+            <button class="weiter-button" onclick="showPage('scene')">WEITER</button>
+        </div>
+    </div>
+
+    <!-- Scene -->
+    <div class="page" id="scene" style="display: none;">
+        <div class="header">SCENE</div>
+        <div class="input-container">
+            <label><input type="checkbox" id="scene-checkbox"> Szene</label>
+            <input type="text" id="scene-comment" placeholder="Bemerkung">
+            <label><input type="checkbox" id="security-checkbox"> Sicherheit</label>
+            <input type="text" id="security-comment" placeholder="Bemerkung">
+            <label><input type="checkbox" id="situation-checkbox"> Situation</label>
+            <input type="text" id="situation-comment" placeholder="Bemerkung">
+        </div>
+        <div class="nice-to-know">
+            <h4>Nice To Know</h4>
+            <p>- PSA vollständig</p>
+            <p>- Rückmeldung</p>
+            <p>- Nachalarmierung</p>
+        </div>
+        <button class="weiter-button" onclick="showPage('impression')">WEITER</button>
+        <button class="zurueck-button" onclick="goBack()">ZURÜCK</button>
+    </div>
+
+    <!-- Impression -->
+    <div class="page" id="impression" style="display: none;">
+        <div class="header">IMPRESSIONS</div>
+        <div class="input-container">
+            <label><input type="checkbox" id="ersteindruck-checkbox"> Ersteindruck</label>
+            <input type="text" id="ersteindruck-comment" placeholder="Bemerkung">
+            <label><input type="checkbox" id="wasb-checkbox"> WASB</label>
+            <input type="text" id="wasb-comment" placeholder="Bemerkung">
+            <label><input type="checkbox" id="trauma-checkbox"> Trauma</label>
+            <input type="text" id="trauma-comment" placeholder="Bemerkung">
+        </div>
+        <label>AVPU:</label>
+        <select id="avpu-select">
+            <option value="wach">Wach</option>
+            <option value="ansprechbar">Ansprechbar</option>
+            <option value="schmerzeiz">Schmerzeiz</option>
+            <option value="bewusstlos">Bewusstlos</option>
+        </select>
+        <div class="button-container">
+            <button class="weiter-button" onclick="generatePDF()">PDF SPEICHERN</button>
+            <button class="zurueck-button" onclick="goBack()">ZURÜCK</button>
+        </div>
+    </div>
+
+</body>
+</html>

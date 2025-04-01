@@ -1,0 +1,83 @@
+/* Allgemeine Einstellungen */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    color: red;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Seiten */
+.page {
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+}
+
+/* Header */
+.header {
+    background-color: white;
+    padding: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+
+/* Buttons */
+.einsatz-button, .weiter-button, .zurueck-button {
+    background-color: white;
+    color: red;
+    border: none;
+    padding: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+/* Eingabefelder */
+.input-container input, .input-container select {
+    width: 90%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid blue;
+    font-size: 16px;
+}
+
+/* Container für die Buttons im Team-Bereich */
+/* Buttons in einer Reihe anordnen */
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.einsatz-button1, .einsatz-button2, .weiter-button, .zurueck-button {
+    background-color: white;
+    color: red;
+    border: none;
+    padding: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 90%; /* Buttons nebeneinander mit etwas Abstand */
+    margin-bottom: 20px;
+}
+
+/* Optional: Hover-Effekt */
+.einsatz-button:hover, .weiter-button:hover, .zurueck-button:hover {
+    background-color: #f1f1f1;
+}
+
+.nice-to-know p {
+    font-size: 14px;
+}
