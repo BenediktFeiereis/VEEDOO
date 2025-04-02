@@ -13,14 +13,92 @@
 
     <!-- Startseite -->
     <div class="page" id="startseite">
-        <div class="header">VEEDOO - WORKER</div>
+        <div class="header">VEEDOO - WORKER <span class="icon"></span></div>
         <button class="einsatz-button1" onclick="showPage('einsatzsituation')">
             EINSATZ ERWACHSEN <span class="icon">👮‍♂️</span>
         </button> <br>
-        <button class="einsatz-button2" onclick="showPage('einsatzsituation')">
+        <button class="einsatz-button1" onclick="showPage('einsatzsituation')">
             EINSATZ KIND <span class="icon">👶</span>
         </button>
+        <button class="einsatz-button1" onclick="showPage('Menü')">
+            MENÜ <span class="icon">🧰</span>
+        </button>
     </div>
+
+    <!--Menü-->
+    <div class="page" id="Menü" style="display: none;">
+        <div class="header" >MENÜ</div>
+        <button class="einsatz-button1" onclick="showPage('SAMPLER')">
+            SAMPLER <span class="icon"></span>
+        </button>
+        <button class="einsatz-button1" onclick="showPage('OPQRST')">
+            OPQRST <span class="icon"></span>
+        </button>
+        <button class="einsatz-button1" onclick="showPage('BEFAST')">
+            BEFAST <span class="icon"></span>
+        </button>
+        <button class="einsatz-button1" onclick="showPage('PÄDDREIECK')">
+            PÄD DREIECK <span class="icon"></span>
+        </button>
+        <button class="einsatz-button1" onclick="showPage('MED')">
+            MED GABE <span class="icon"></span>
+        </button>
+        <button class="einsatz-button1" onclick="showPage('startseite')">
+            Zurück <span class="icon">🔙</span>
+        </button>
+    </div>
+
+    <!--Schemata--> 
+        <!--Sampler-->
+        <div class="page" id="SAMPLER" style="display: none;">   
+            <div class="header">SAMPLER</div>
+            <div class="input-container">
+                <label><input type="checkbox" id="S1-checkbox"> Symptome</label>
+                <input type="text" id="S1-comment" placeholder="Bemerkung">
+                <label><input type="checkbox" id="S2-checkbox"> Allergien</label>
+                <input type="text" id="S2-comment" placeholder="Bemerkung">
+                <label><input type="checkbox" id="S3-checkbox"> Medikamente</label>
+                <input type="text" id="S3-comment" placeholder="Bemerkung">
+                <label><input type="checkbox" id="S4-checkbox"> Patientenvorgeschichte</label>
+                <input type="text" id="S4-comment" placeholder="Bemerkung">
+                <label><input type="checkbox" id="S5-checkbox"> Letzte</label>
+                <input type="text" id="S5-comment" placeholder="Bemerkung">
+                <label><input type="checkbox" id="S6-checkbox"> Ereignis</label>
+                <input type="text" id="S6-comment" placeholder="Bemerkung">
+                <label><input type="checkbox" id="S7-checkbox"> Schwangerschaft</label>
+                <input type="text" id="S7-comment" placeholder="Bemerkung">
+            </div>
+            <div class="button-container">
+                <button class="weiter-button" onclick="showPage('Menü')">Schließen</button>
+                <button class="weiter-button" onclick="generatePDF()">PDF SPEICHERN</button>
+            </div>
+        </div>
+
+        <!--OPQRST-->
+        <div class="page" id="OPQRST" style="display: none;">   
+            <div class="header">OPQRST</div>
+            <div class="input-container">
+                <label><input type="checkbox" id="O1-checkbox"> Onset</label>
+                <input type="text" id="O1-comment" placeholder="Bemerkung">
+                <label><input type="checkbox" id="O2-checkbox"> Provocation</label>
+                <input type="text" id="O2-comment" placeholder="Bemerkung">
+                <label><input type="checkbox" id="O3-checkbox"> Qualitiy</label>
+                <input type="text" id="O3-comment" placeholder="Bemerkung">
+                <label><input type="checkbox" id="O4-checkbox"> Radiation</label>
+                <input type="text" id="O4-comment" placeholder="Bemerkung">
+                <label><input type="checkbox" id="O5-checkbox"> Servity</label>
+                <input type="text" id="O5-comment" placeholder="Bemerkung">
+                <label><input type="checkbox" id="O6-checkbox"> Time</label>
+                <input type="text" id="O6-comment" placeholder="Bemerkung">
+            </div>
+            <div class="button-container">
+                <button class="weiter-button" onclick="showPage('Menü')">Schließen</button>
+                <button class="weiter-button" onclick="generatePDF()">PDF SPEICHERN</button>
+            </div>
+        </div>
+
+        <!--PÄD DREIECK-->
+        
 
     <!-- Einsatzsituation -->
     <div class="page" id="einsatzsituation" style="display: none;">
@@ -29,10 +107,9 @@
             <input type="text" id="einsatzort" placeholder="Einsatzort">
             <input type="text" id="einsatzzeit" placeholder="Einsatzzeit">
             <input type="text" id="wetter" placeholder="Wetter">
-            <input type="text" id="na" placeholder="NA">
-            <input type="text" id="na_ma" placeholder="NA-MA">
         </div>
         <button class="weiter-button" onclick="showPage('team')">WEITER</button>
+        <button class="zurueck-button" onclick="goBack()">ZURÜCK</button>
     </div>
 
     <!-- Team -->
@@ -60,8 +137,8 @@
             <input type="number" id="groesse" placeholder="Größe (cm)">
         </div>
         <div class="button-container">
-            <button class="zurueck-button" onclick="goBack()">ZURÜCK</button>
             <button class="weiter-button" onclick="showPage('scene')">WEITER</button>
+            <button class="zurueck-button" onclick="goBack()">ZURÜCK</button>
         </div>
     </div>
 
@@ -105,10 +182,160 @@
             <option value="bewusstlos">Bewusstlos</option>
         </select>
         <div class="button-container">
-            <button class="weiter-button" onclick="generatePDF()">PDF SPEICHERN</button>
+            <button class="weiter-button" onclick="showPage('X')">WEITER</button>
             <button class="zurueck-button" onclick="goBack()">ZURÜCK</button>
         </div>
     </div>
+    <!-- XABCDE -->
+    <div class="page" id="X" style="display: none;">
+        <div class="header">X Critical Bleeding</div>
+        <div class="input-container">
+            <label><input type="checkbox" id="x1-checkbox"> Blutung gestoppt</label>
+            <input type="text" id="x1-comment" placeholder="Bemerkung">
+        </div>
+        <div class="button-container">
+            <button class="weiter-button" onclick="showPage('A')">WEITER</button>
+            <button class="zurueck-button" onclick="goBack()">ZURÜCK</button>
+        </div>
+    </div>
+    <div class="page" id="A" style="display: none;">
+        <div class="header">A - Airway</div>
+        <div class="input-container">
+            <label><input type="checkbox" id="a1-checkbox"> Offen und Sicher</label>
+            <input type="text" id="a1-comment" placeholder="Bemerkung">
+            <label><input type="checkbox" id="a2-checkbox"> Gefährdet</label>
+            <input type="text" id="a2-comment" placeholder="Bemerkung">
+            <label><input type="checkbox" id="a3-checkbox"> Verlegt</label>
+            <input type="text" id="a3-comment" placeholder="Bemerkung">
+        </div>
+        <div class="button-container">
+            <button class="weiter-button" onclick="showPage('B')">WEITER</button>
+            <button class="zurueck-button" onclick="goBack()">ZURÜCK</button>
+        </div>
+    </div>
+    <div class="page" id="B" style="display: none;">
+        <div class="header">B - Breathing</div>
+        <div class="input-container">
+            <label><input type="checkbox" id="b1-checkbox"> Atemfrequenz</label>
+            <input type="text" id="b1-comment" placeholder="Bemerkung">
+            <label><input type="checkbox" id="b2-checkbox"> Tidalvolumen</label>
+            <input type="text" id="b2-comment" placeholder="Bemerkung">
+            <label><input type="checkbox" id="b3-checkbox"> Atemaarbeit</label>
+            <input type="text" id="b3-comment" placeholder="Bemerkung">
+            <label><input type="checkbox" id="b4-checkbox"> Oxygenierung</label>
+            <input type="text" id="b4-comment" placeholder="Bemerkung">
+            <label><input type="checkbox" id="b5-checkbox"> Auskultation</label>
+            <input type="text" id="b5-comment" placeholder="Bemerkung">
+        </div>
+        <div class="button-container">
+            <button class="weiter-button" onclick="showPage('C')">WEITER</button>
+            <button class="zurueck-button" onclick="goBack()">ZURÜCK</button>
+        </div>
+    </div>
+    <div class="page" id="C" style="display: none;">
+        <div class="header">C - Circulation</div>
+        <div class="input-container">
+            <label><input type="checkbox" id="c1-checkbox"> Herzfrequenz</label>
+            <input type="text" id="c1-comment" placeholder="Bemerkung">
+            <label><input type="checkbox" id="c2-checkbox"> Blutdruck</label>
+            <input type="text" id="c2-comment" placeholder="Bemerkung">
+            <label><input type="checkbox" id="c2-checkbox"> Puls</label>
+            <input type="text" id="c2-comment" placeholder="Bemerkung">
+            <label><input type="checkbox" id="c3-checkbox"> REKAP</label>
+            <input type="text" id="c3-comment" placeholder="Bemerkung">
+            <label><input type="checkbox" id="c4-checkbox"> Periphere Perfusion</label>
+            <input type="text" id="c4-comment" placeholder="Bemerkung">
+            <label><input type="checkbox" id="c5-checkbox"> Vorlast</label>
+            <input type="text" id="c5-comment" placeholder="Bemerkung">
+        </div>
+        <div class="button-container">
+            <button class="weiter-button" onclick="showPage('STU-ASK')">WEITER</button>
+            <button class="zurueck-button" onclick="goBack()">ZURÜCK</button>
+        </div>
+    </div>
+    <div class="page" id="D" style="display: none;">
+        <div class="header">D - Disability</div>
+        <div class="input-container">
+            <label><input type="checkbox" id="d1-checkbox"> BZ (neuro auffällig)</label>
+            <input type="text" id="d1-comment" placeholder="Bemerkung">
+            <label><input type="checkbox" id="d2-checkbox"> BEFAST</label>
+            <input type="text" id="d2-comment" placeholder="Bemerkung">
+            <button class="weiter-button" onclick="showPage('BEFAST')">BEFAST DURCHFÜHREN</button>
+            <label><input type="checkbox" id="d3-checkbox"> Pupillenstatus</label>
+            <input type="text" id="d3-comment" placeholder="Bemerkung">
+
+        </div>
+        <div class="button-container">
+            <button class="weiter-button" onclick="showPage('E')">WEITER</button>
+            <button class="zurueck-button" onclick="showPage('C')">ZURÜCK</button>
+        </div>
+    </div>
+    <div class="page" id="E" style="display: none;">
+        <div class="header">E - Exposure</div>
+        <div class="input-container">
+            <label><input type="checkbox" id="e1-checkbox"> Körperthemperatur</label>
+            <input type="text" id="e1-comment" placeholder="Bemerkung">
+            <label><input type="checkbox" id="e2-checkbox"> Hautkolorit</label>
+            <input type="text" id="e2-comment" placeholder="Bemerkung">
+
+        </div>
+        <div class="button-container">
+            <button class="weiter-button" onclick="showPage('MENÜ')">WEITER</button>
+            <button class="zurueck-button" onclick="goBack()">ZURÜCK</button>
+
+            <button class="weiter-button" onclick="generatePDF()">PDF SPEICHERN</button>
+        </div>
+    </div>
+
+    <!-- Button zur STU -->
+    <div class="page" id="STU-ASK" style="display: none;">
+        <p class="header">STU durchführen</p>
+        <button class="weiter-button" onclick="showPage('STU1')">
+            <label for="">JA</label>
+        </button>
+        <button class="weiter-button" onclick="showPage('D')">
+            <label for="">NEIN</label>
+        </button>
+    </div>
+
+    <!-- STU -->
+    <div class="page" id="STU1" style="display: none;">
+        <div class="header">STU</div>
+        <div class="input-container">
+            <label><input type="checkbox" id="STU-KOPF"> KOPF</label>
+            <input type="text" id="STU-KOPF" placeholder="Bemerkung">
+            <label><input type="checkbox" id="STU-HALS"> HALS</label>
+            <input type="text" id="STU-HALS" placeholder="Bemerkung">
+            <label><input type="checkbox" id="STU-THORAX"> Thorax</label>
+            <input type="text" id="STU-THORAX" placeholder="Bemerkung">
+            <label><input type="checkbox" id="STU-ABDOMEN"> Abdomen</label>
+            <input type="text" id="STU-ABDOMEN" placeholder="Bemerkung">
+        </div>
+        <div class="button-container">
+            <button class="weiter-button" onclick="showPage('STU2')">WEITER</button>
+            <button class="zurueck-button" onclick="goBack()">ZURÜCK</button>
+    </div>
+    
+    </div>
+    <div class="page" id="STU2" style="display: none;">
+        <div class="header">STU</div>
+        <div class="input-container">
+            <label><input type="checkbox" id="STU-BECKEN"> BECKEN</label>
+            <input type="text" id="STU-BECKEN" placeholder="Bemerkung">
+            <label><input type="checkbox" id="STU-OS"> OBERSCHENKEL</label>
+            <input type="text" id="STU-OS" placeholder="Bemerkung">
+            <label><input type="checkbox" id="STU-US"> UNTERSCHENKEL/ARME</label>
+            <input type="text" id="STU-US" placeholder="Bemerkung">
+            <label><input type="checkbox" id="STU-WS"> WIRBELSÄULE</label>
+            <input type="text" id="STU-WS" placeholder="Bemerkung">
+        </div>
+        <div class="button-container">
+            <button class="weiter-button" onclick="showPage('D')">WEITER</button>
+            <button class="zurueck-button" onclick="goBack()">ZURÜCK</button>
+    </div>
+
+
+
 
 </body>
 </html>

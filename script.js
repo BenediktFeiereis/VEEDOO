@@ -50,11 +50,7 @@ function generatePDF() {
     doc.text("Einsatzort: " + document.getElementById("einsatzort").value, 10, 30);
     doc.text("Einsatzzeit: " + document.getElementById("einsatzzeit").value, 10, 40);
     doc.text("Wetter: " + document.getElementById("wetter").value, 10, 50);
-    doc.text("NA: " + document.getElementById("na").value, 10, 60);
-    doc.text("NA-MA: " + document.getElementById("na_ma").value, 10, 70);
-
     // Seite 2: Team
-    doc.addPage();
     doc.setFontSize(18);
     doc.text("TEAM", 10, 10);
     doc.setFontSize(12);
