@@ -147,8 +147,9 @@
     <div class="page" id="einsatzsituation" style="display: none;">
         <div class="header">EINSATZSITUATION</div>
         <div class="input-container">
+            <input type="text" id="einsatzstichwort" placeholder="Einsatzstichwort">
             <input type="text" id="einsatzort" placeholder="Einsatzort">
-            <input type="text" id="einsatzzeit" placeholder="Einsatzzeit">
+            <input type="time" id="einsatzzeit" placeholder="Einsatzzeit">
             <input type="text" id="wetter" placeholder="Wetter">
         </div>
         <button class="weiter-button" onclick="showPage('team')">WEITER</button>
@@ -174,7 +175,15 @@
     <div class="page" id="patient" style="display: none;">
         <div class="header">PATIENT</div>
         <div class="input-container">
-            <input type="text" id="geschlecht" placeholder="Geschlecht">
+            <div>
+                <select name="" id="Geschlecht">
+                    <option value="1">Geschlecht</option>
+                    <option value="2">Männlich</option>
+                    <option value="3">Weiblich</option>
+                    <option value="4">Divers</option>
+                </select>
+            </div>
+            
             <input type="number" id="alter" placeholder="Alter">
             <input type="number" id="gewicht" placeholder="Gewicht (kg)">
             <input type="number" id="groesse" placeholder="Größe (cm)">
@@ -189,18 +198,15 @@
     <div class="page" id="scene" style="display: none;">
         <div class="header">SCENE</div>
         <div class="input-container">
-            <label><input type="checkbox" id="scene-checkbox"> Szene</label>
+            <label><input type="checkbox" id="scene-checkbox" class="checkbox"> Szene</label>
             <input type="text" id="scene-comment" placeholder="Bemerkung">
-            <label><input type="checkbox" id="security-checkbox"> Sicherheit</label>
+            <label><input type="checkbox" id="security-checkbox" class="checkbox"> Sicherheit</label>
             <input type="text" id="security-comment" placeholder="Bemerkung">
-            <label><input type="checkbox" id="situation-checkbox"> Situation</label>
+            <label><input type="checkbox" id="situation-checkbox" class="checkbox"> Situation</label>
             <input type="text" id="situation-comment" placeholder="Bemerkung">
         </div>
         <div class="nice-to-know">
-            <h4>Nice To Know</h4>
-            <p>- PSA vollständig</p>
-            <p>- Rückmeldung</p>
-            <p>- Nachalarmierung</p>
+            <p>PSA vollständig, Rückmeldung, Nachalarmierung</p>
         </div>
         <button class="weiter-button" onclick="showPage('impression')">WEITER</button>
         <button class="zurueck-button" onclick="goBack()">ZURÜCK</button>
@@ -210,20 +216,23 @@
     <div class="page" id="impression" style="display: none;">
         <div class="header">IMPRESSIONS</div>
         <div class="input-container">
-            <label><input type="checkbox" id="ersteindruck-checkbox"> Ersteindruck</label>
+            <label><input type="checkbox" id="ersteindruck-checkbox" class="checkbox"> Ersteindruck</label>
             <input type="text" id="ersteindruck-comment" placeholder="Bemerkung">
-            <label><input type="checkbox" id="wasb-checkbox"> WASB</label>
+            <label><input type="checkbox" id="wasb-checkbox" class="checkbox"> WASB</label>
             <input type="text" id="wasb-comment" placeholder="Bemerkung">
-            <label><input type="checkbox" id="trauma-checkbox"> Trauma</label>
+            <label><input type="checkbox" id="trauma-checkbox" class="checkbox"> Trauma</label>
             <input type="text" id="trauma-comment" placeholder="Bemerkung">
         </div>
-        <label>AVPU:</label>
-        <select id="avpu-select">
-            <option value="wach">Wach</option>
-            <option value="ansprechbar">Ansprechbar</option>
-            <option value="schmerzeiz">Schmerzeiz</option>
-            <option value="bewusstlos">Bewusstlos</option>
-        </select>
+        <div class="input-container">
+            <label>AVPU:</label>
+            <select id="avpu-select">
+                <option value="wach">Wach</option>
+                <option value="ansprechbar">Ansprechbar</option>
+                <option value="schmerzeiz">Schmerzeiz</option>
+                <option value="bewusstlos">Bewusstlos</option>
+            </select>
+        </div>
+       
         <div class="button-container">
             <button class="weiter-button" onclick="showPage('X')">WEITER</button>
             <button class="zurueck-button" onclick="goBack()">ZURÜCK</button>
