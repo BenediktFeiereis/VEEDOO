@@ -97,8 +97,51 @@
             </div>
         </div>
 
+        <!--BEFAST-->
+        <div class="page" id="BEFAST" style="display: none;">   
+            <div class="header">BEFAST</div>
+            <div class="input-container">
+                <label><input type="checkbox" id="F1-checkbox"> Balance</label>
+                <input type="text" id="F1-comment" placeholder="Bemerkung">
+                <label><input type="checkbox" id="F2-checkbox"> Eyes</label>
+                <input type="text" id="F2-comment" placeholder="Bemerkung">
+                <label><input type="checkbox" id="F3-checkbox"> Face</label>
+                <input type="text" id="F3-comment" placeholder="Bemerkung">
+                <label><input type="checkbox" id="F4-checkbox"> Arms</label>
+                <input type="text" id="F4-comment" placeholder="Bemerkung">
+                <label><input type="checkbox" id="F5-checkbox"> Speech</label>
+                <input type="text" id="F5-comment" placeholder="Bemerkung">
+                <label><input type="checkbox" id="F6-checkbox"> Time</label>
+                <input type="text" id="F6-comment" placeholder="Bemerkung">
+            </div>
+            <div class="button-container">
+                <button class="weiter-button" onclick="showPage('Menü')">Schließen</button>
+                <button class="weiter-button" onclick="generatePDF()">PDF SPEICHERN</button>
+            </div>
+        </div>
+
         <!--PÄD DREIECK-->
-        
+        <div class="page" id="PÄDDREIECK" style="display: none;">   
+            <div class="header">PÄDI DREIECK</div>
+            <div class="input-container">
+                <label> noch nicht verfügbar</label>
+            </div>
+            <div class="button-container">
+                <button class="weiter-button" onclick="showPage('Menü')">Schließen</button>
+            </div>
+        </div>
+
+        <!--MED-->
+        <div class="page" id="MED" style="display: none;">   
+            <div class="header">MEDIKAMENTE</div>
+            <div class="input-container">
+                <label> noch nicht verfügbar</label>
+            </div>
+            <div class="button-container">
+                <button class="weiter-button" onclick="showPage('Menü')">Schließen</button>
+            </div>
+        </div>
+
 
     <!-- Einsatzsituation -->
     <div class="page" id="einsatzsituation" style="display: none;">
@@ -280,7 +323,7 @@
 
         </div>
         <div class="button-container">
-            <button class="weiter-button" onclick="showPage('Menü')">WEITER</button>
+            <button class="weiter-button" onclick="showPage('MENÜ')">WEITER</button>
             <button class="zurueck-button" onclick="goBack()">ZURÜCK</button>
 
             <button class="weiter-button" onclick="generatePDF()">PDF SPEICHERN</button>
