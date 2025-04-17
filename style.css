@@ -1,4 +1,13 @@
 /* Allgemeine Einstellungen */
+.checkbox {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #333;
+    display: inline-block;
+    border-radius: 4px;
+    position: relative;
+    margin-right: 8px;
+}
 body {
     margin: 0;
     padding: 0;
@@ -38,7 +47,7 @@ body {
     font-weight: bold;
     border-radius: 10px;
     cursor: pointer;
-    width: 100%;
+    width: 70%;
     margin-bottom: 20px;
 }
 
@@ -69,7 +78,7 @@ body {
     font-weight: bold;
     border-radius: 10px;
     cursor: pointer;
-    width: 90%; /* Buttons nebeneinander mit etwas Abstand */
+    width: 70%; /* Buttons nebeneinander mit etwas Abstand */
     margin-bottom: 20px;
 }
 
@@ -80,4 +89,10 @@ body {
 
 .nice-to-know p {
     font-size: 14px;
+}
+@media (max-width: 600px) {
+    .button-container {
+        flex-direction: column;
+        gap: 15px;
+    }
 }
